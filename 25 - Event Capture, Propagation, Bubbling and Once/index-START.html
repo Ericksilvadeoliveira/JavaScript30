@@ -42,7 +42,20 @@
 
 <button></button>
 <script>
+const divs = document.querySelectorAll('div');
 
+function longText(e) {
+  console.log(this.classList.value);
+}
+
+divs.forEach(div => div.addEventListener('click', longText, {
+  capture: true
+}));
+
+//Ao clicar na tela, vai aparecer no console que eu cliquei em todos
+//ao mesmo tempo e ao contrário. THREE, TWO, ONE. O navegador entende que a direção do caminho de cima para baixo(origem do clique)
+//Para que ele entenda e mostre o a ordem sendo primeiro a origem e depois o resto(inverter)
+//adiciona capture: true
 </script>
 </body>
 </html>
